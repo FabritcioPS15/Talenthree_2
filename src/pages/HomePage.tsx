@@ -140,7 +140,7 @@ empresa alcance su máximo potencial.        </p>
             <div className="p-3.5 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full transition-all">
               <PlayCircle className="w-8 h-8" />
             </div>
-            <span className="font-medium">Ver video introductorio</span>
+            <span className="font-medium">Ver video introductori</span>
           </motion.div>
         </div>
       </motion.div>
@@ -155,7 +155,6 @@ empresa alcance su máximo potencial.        </p>
           <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-30 group-hover:opacity-50 blur-xl transition-all duration-300"></div>
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-10"></div>
           <div className="relative overflow-hidden rounded-2xl transform rotate-1 group-hover:rotate-0 transition-all duration-300">
-          <img src={Estudiante} alt="Estudiantes colaborando" className="w-full h-auto object-cover scale-105 group-hover:scale-100 transition-transform duration-300" />
           </div>
         </div>
 
