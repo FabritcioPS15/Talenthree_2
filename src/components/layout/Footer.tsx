@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Logo from '../medios/logo ícono.png';
+import Logo from '../medios/logo.png';
 
 
 const Footer: React.FC = () => {
