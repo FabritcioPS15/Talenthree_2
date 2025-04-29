@@ -204,8 +204,7 @@ empresa alcance su máximo potencial.        </p>
               whileInView={{ opacity: 1 }}
               className="text-xl text-gray-800 dark:text-gray-400"
             >
-              Hemos transformado la forma de trabajar de organizaciones líderes
-            </motion.p>
+Hemos impulsado la evolución del talento y la gestión en organizaciones líderes            </motion.p>
           </div>
           <CompanyCarousel />
         </div>
