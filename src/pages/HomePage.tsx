@@ -7,7 +7,7 @@ import EventCard from '../components/ui/EventCard';
 import InstructorCard from '../components/ui/InstructorCard';
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
-import estudianteImg from '../../medios/Estudiante_tablet.png';
+import estudianteImg from '../../medios/estudiante.png';
 
 
 const containerVariants = {
