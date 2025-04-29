@@ -24,10 +24,10 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'Inicio', path: '/' },
     { name: 'Nosotros', path: '/nosotros' },
-    { name: 'Cursos', path: '/cursos' },
-    { name: 'Eventos', path: '/eventos' },
-    { name: 'Instructores', path: '/instructores' },
-    { name: 'Contacto', path: '/contacto' },
+    { name: 'Educación continua', path: '/cursos' },
+    { name: 'Noticias y eventos', path: '/eventos' },
+    { name: 'Asesoría y Consultoría', path: '/instructores' },
+    { name: 'Contáctanos', path: '/contacto' },
   ];
 
   useEffect(() => {

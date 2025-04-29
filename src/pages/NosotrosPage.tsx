@@ -59,7 +59,40 @@ const NosotrosPage: React.FC = () => {
           </p>
         </motion.div>
       </section>
-
+      {/* Nueva sección Acerca de Nosotros */}
+      <section className="py-16 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            className="grid md:grid-cols-2 gap-12 items-center"
+          >
+            <motion.div variants={itemVariants} className="space-y-6">
+              <h2 className="text-3xl font-bold mb-6 dark:text-white">Acerca de TalentThree</h2>
+              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                En TalentThree, somos pioneros en la transformación del desarrollo profesional y 
+                organizacional. Desde nuestra fundación en 2019, hemos ayudado a más de 10,000 
+                profesionales y 500 empresas a alcanzar su máximo potencial mediante soluciones 
+                innovadoras en:
+              </p>
+              <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+                <li>Desarrollo de talento humano</li>
+                <li>Capacitación especializada</li>
+                <li>Consultoría organizacional</li>
+                <li>Tecnologías educativas de vanguardia</li>
+              </ul>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <img 
+                src="https://images.pexels.com/photos/7691647/pexels-photo-7691647.jpeg" 
+                alt="Equipo TalentThree" 
+                className="rounded-xl shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
       {/* Mission & Vision */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
