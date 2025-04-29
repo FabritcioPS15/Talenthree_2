@@ -7,7 +7,7 @@ import EventCard from '../components/ui/EventCard';
 import InstructorCard from '../components/ui/InstructorCard';
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
-import estudianteImg from '../../medios/estudiante.png';
+import Estudiante from '../../medios/estudiante.png'; // Verifica la ruta
 
 
 const containerVariants = {
@@ -156,13 +156,10 @@ empresa alcance su máximo potencial.        </p>
           <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-30 group-hover:opacity-50 blur-xl transition-all duration-300"></div>
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-10"></div>
           <div className="relative overflow-hidden rounded-2xl transform rotate-1 group-hover:rotate-0 transition-all duration-300">
-            <img 
-  src={estudianteImg}
-  alt="Estudiantes colaborando" 
-              className="w-full h-auto object-cover scale-105 group-hover:scale-100 transition-transform duration-300"
-            />
+          <img src={Estudiante} alt="Estudiantes colaborando" className="w-full h-auto object-cover scale-105 group-hover:scale-100 transition-transform duration-300" />
           </div>
         </div>
+
 
         <motion.div 
           animate={{ y: [-10, 10, -10] }}
