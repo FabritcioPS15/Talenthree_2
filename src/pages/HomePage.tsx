@@ -4,6 +4,7 @@ import { Calendar, Award, ChevronRight, PlayCircle, X, Sparkles, Users, BrainCir
 import { motion } from 'framer-motion';
 import CourseCard from '../components/ui/CourseCard';
 import EventCard from '../components/ui/EventCard';
+import AnimatedNumber from '../components/ui/AnimatedNumber'; // Asegúrate de crear este componente
 import InstructorCard from '../components/ui/InstructorCard';
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
@@ -185,9 +186,29 @@ empresa alcance su máximo potencial.        </p>
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="py-6 bg-gray-50 dark:bg-gray-950"
+        className="py-16 bg-gray-200 dark:bg-gray-950"
       >
-        <CompanyCarousel />
+        <div className="container mx-auto px-4 text-center">
+          <div className="mb-12">
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              className="text-4xl md:text-5xl font-bold mb-4"
+            >
+              Más de{' '}
+              <AnimatedNumber value={30} className="text-primary-600 dark:text-primary-400" />{' '}
+              empresas capacitadas
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="text-xl text-gray-800 dark:text-gray-400"
+            >
+              Hemos transformado la forma de trabajar de organizaciones líderes
+            </motion.p>
+          </div>
+          <CompanyCarousel />
+        </div>
       </motion.div>
 
       {/* Features Section */}
