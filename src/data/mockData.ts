@@ -27,7 +27,7 @@ export const courses = [
   },
   {
     id: '3',
-    title: 'Auxiliar de Tecnologías de la Información',
+    title: 'Auxiliar de TI',
     instructor: 'Ana Martínez',
     description: 'Aprende a brindar soporte básico de sistemas, atención técnica, manejo de bases de datos simples, gestión de hardware y software ...',
     price: 69.99,
