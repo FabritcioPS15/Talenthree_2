@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { useCart } from '../../contexts/CartContext';
-import Logo from '../medios/logo.png';
+import Logo from '../../medios/logo.png';
 import '@fontsource/noto-sans/400.css';
 import '@fontsource/noto-sans/500.css';
 import '@fontsource/noto-sans/600.css';
