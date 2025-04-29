@@ -100,7 +100,7 @@ const HomePage: React.FC = () => {
 <span className="px-2 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium flex items-center gap-2 animate-glow-purple">
     <Sparkles size={18} className="text-yellow-500 animate-pulse" />
     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white">
-      Educación, talento y consultoría empresarial
+      Formamos personas, transformamos culturas, generamos impacto
     </span>
   </span>
 </div>
@@ -140,7 +140,7 @@ empresa alcance su máximo potencial.        </p>
             <div className="p-3.5 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full transition-all">
               <PlayCircle className="w-8 h-8" />
             </div>
-            <span className="font-medium">Ver video introductori</span>
+            <span className="font-medium">Ver video introductorio</span>
           </motion.div>
         </div>
       </motion.div>
