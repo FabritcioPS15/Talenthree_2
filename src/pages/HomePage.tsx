@@ -201,9 +201,9 @@ empresa alcance su máximo potencial.        </p>
             className="text-center mb-16"
           >
             <motion.h2 variants={itemVariants} className="text-4xl font-bold mb-4">
-              Nuestra metodología{' '}
+              Nuestros{' '}
               <span className="bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text">
-                innovadora
+                beneficios
               </span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-xl">
@@ -221,20 +221,20 @@ empresa alcance su máximo potencial.        </p>
             {[
               {
                 icon: BookOpen,
-                title: "Contenido Actualizado",
-                text: "Programas revisados cada 3 meses para mantener relevancia",
+                title: "CERTIFICACIÓN DE VALOR",
+                text: "Reconocimiento que respalda tu crecimiento y mejora tu empleabilidad.",
                 color: "from-blue-100 to-blue-200"
               },
               {
                 icon: Users,
-                title: "Mentores Expertos",
-                text: "Profesionales en activo con experiencia comprobada",
+                title: "ACOMPAÑAMIENTO PERSONALIZADO",
+                text: "Seguimiento y asesoría para aplicar lo aprendido en tu entorno laboral.",
                 color: "from-purple-100 to-purple-200"
               },
               {
                 icon: Briefcase,
-                title: "Enfoque Práctico",
-                text: "Proyectos reales para tu portafolio profesional",
+                title: "INGLES PARA EL TRABAJO",
+                text: "Aprenderás técnicas de negociación, mejorando tu empleabilidad y proyección profesional.",
                 color: "from-orange-100 to-orange-200"
               }
             ].map((feature, index) => (
