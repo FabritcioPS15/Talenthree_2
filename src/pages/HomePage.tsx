@@ -201,9 +201,9 @@ empresa alcance su máximo potencial.        </p>
             className="text-center mb-16"
           >
             <motion.h2 variants={itemVariants} className="text-4xl font-bold mb-4">
-              Nuestros{' '}
+            Nuestra metodología{' '}
               <span className="bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text">
-                beneficios
+              innovadora
               </span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-xl">
@@ -221,20 +221,20 @@ empresa alcance su máximo potencial.        </p>
             {[
               {
                 icon: BookOpen,
-                title: "CERTIFICACIÓN DE VALOR",
-                text: "Reconocimiento que respalda tu crecimiento y mejora tu empleabilidad.",
+                title: "Moderna y tecnológica",
+                text: "Integramos tecnología educativa avanzada y actualizamos contenidos para un mundo en constante cambio.",
                 color: "from-blue-100 to-blue-200"
               },
               {
                 icon: Users,
-                title: "ACOMPAÑAMIENTO PERSONALIZADO",
-                text: "Seguimiento y asesoría para aplicar lo aprendido en tu entorno laboral.",
+                title: "Estratégica y profesional",
+                text: "Educación integral: método tradicional + innovación digital; y, mentoría con profesionales de alto impacto.",
                 color: "from-purple-100 to-purple-200"
               },
               {
                 icon: Briefcase,
-                title: "INGLES PARA EL TRABAJO",
-                text: "Aprenderás técnicas de negociación, mejorando tu empleabilidad y proyección profesional.",
+                title: "Disruptiva y ágil",
+                text: "Mentores que son agentes de cambio y metodologías prácticas que retan y evolucionan..",
                 color: "from-orange-100 to-orange-200"
               }
             ].map((feature, index) => (
@@ -313,7 +313,7 @@ empresa alcance su máximo potencial.        </p>
               Únete a nuestra <span className="text-primary-500">comunidad</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-xl">
-              Eventos exclusivos y networking con profesionales del sector
+              Combiamos 
             </p>
           </motion.div>
 
