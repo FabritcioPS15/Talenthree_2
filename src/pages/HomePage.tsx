@@ -7,7 +7,6 @@ import EventCard from '../components/ui/EventCard';
 import InstructorCard from '../components/ui/InstructorCard';
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
-import Estudiante from '../../medios/estudiante.png'; // Verifica la ruta
 
 
 const containerVariants = {
