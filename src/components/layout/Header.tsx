@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { useCart } from '../../contexts/CartContext';
+import Logo from '../medios/logo ícono.png';
 import '@fontsource/noto-sans/400.css';
 import '@fontsource/noto-sans/500.css';
 import '@fontsource/noto-sans/600.css';
@@ -162,8 +163,8 @@ const Header: React.FC = () => {
   <Link to="/" className="flex items-center">
     <div className="flex items-center text-primary-600 dark:text-primary-400">
       <img 
-        src="src/medios/logo ícono.png" 
-        alt="Logo Talenthree" 
+  src={Logo}
+  alt="Logo Talenthree" 
         className="h-14 w-14 object-contain" 
       />
       <span className="ml-2 text-2xl font-bold tracking-tight">Talenthree</span>

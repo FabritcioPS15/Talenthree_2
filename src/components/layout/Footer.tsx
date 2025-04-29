@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Logo from '../medios/logo ícono.png';
+
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -59,7 +61,7 @@ const Footer: React.FC = () => {
                 transition={{ type: 'spring' }}
               >
 <img
-  src="src/medios/logo ícono.png"
+  src={Logo}
   alt="TALENTHREE"
   className="h-14 w-14 filter invert brightness-0"
 />

@@ -7,6 +7,8 @@ import EventCard from '../components/ui/EventCard';
 import InstructorCard from '../components/ui/InstructorCard';
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
+import estudianteImg from '../medios/Estudiante_tablet.png';
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -155,8 +157,8 @@ empresa alcance su máximo potencial.        </p>
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-10"></div>
           <div className="relative overflow-hidden rounded-2xl transform rotate-1 group-hover:rotate-0 transition-all duration-300">
             <img 
-              src="src/medios/Estudiante_tablet.png" 
-              alt="Estudiantes colaborando" 
+  src={estudianteImg}
+  alt="Estudiantes colaborando" 
               className="w-full h-auto object-cover scale-105 group-hover:scale-100 transition-transform duration-300"
             />
           </div>
