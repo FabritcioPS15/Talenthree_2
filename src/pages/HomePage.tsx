@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Calendar, Award, ChevronRight, PlayCircle, X, Sparkles, Users, Briefcase } from 'lucide-react';
+import { Calendar, Award, ChevronRight, PlayCircle, X, Sparkles, Users, BrainCircuit, Handshake, Crown} from 'lucide-react';
 import { motion } from 'framer-motion';
 import CourseCard from '../components/ui/CourseCard';
 import EventCard from '../components/ui/EventCard';
@@ -220,21 +220,21 @@ empresa alcance su máximo potencial.        </p>
           >
             {[
               {
-                icon: BookOpen,
+                icon: BrainCircuit,
                 title: "Moderna y tecnológica",
                 text: "Integramos tecnología educativa avanzada y actualizamos contenidos para un mundo en constante cambio.",
                 color: "from-blue-100 to-blue-200"
               },
               {
-                icon: Users,
+                icon: Handshake,
                 title: "Estratégica y profesional",
-                text: "Educación integral: método tradicional + innovación digital; y, mentoría con profesionales de alto impacto.",
+                text: "Educación integral: método tradicional + innovación digital, junto con mentoría con profesionales de alto impacto.",
                 color: "from-purple-100 to-purple-200"
               },
               {
-                icon: Briefcase,
+                icon: Crown,
                 title: "Disruptiva y ágil",
-                text: "Mentores que son agentes de cambio y metodologías prácticas que retan y evolucionan..",
+                text: "Mentores que son agentes de cambio y metodologías prácticas que retan y evolucionan.",
                 color: "from-orange-100 to-orange-200"
               }
             ].map((feature, index) => (
