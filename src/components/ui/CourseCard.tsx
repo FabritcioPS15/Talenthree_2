@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Users, Star, ShoppingCart } from 'lucide-react';
+import { Clock, Users, Star, ShoppingCart, Monitor } from 'lucide-react';
 import { useCart } from '../../contexts/CartContext';
 
 export interface CourseProps {
@@ -14,6 +14,7 @@ export interface CourseProps {
   students: number;
   rating: number;
   level: 'Principiante' | 'Intermedio' | 'Avanzado';
+  modality: 'Virtual' | 'Presencial' | 'Hibtido'; // Nueva propiedad
 }
 
 interface CourseCardProps {
@@ -33,9 +34,9 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-soft transition-transform duration-300 hover:-translate-y-2">
+    <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-soft transition-transform duration-300 hover:-translate-y-2 w-full max-w-[400px] min-h-[600px]">
       <Link to={`/cursos/${course.id}`} className="block">
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-56 overflow-hidden">
           <img 
             src={course.image} 
             alt={course.title} 
@@ -50,25 +51,29 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         </div>
       </Link>
       
-      <div className="p-5">
+      <div className="p-8 flex flex-col h-[calc(100%-224px)]">
         <Link to={`/cursos/${course.id}`} className="block">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors line-clamp-2">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 hover:text-primary-600 dark:hover:text-primary-400 transition-colors line-clamp-2">
             {course.title}
           </h3>
         </Link>
         
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 flex-grow">
           {course.description}
         </p>
         
-        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-          <div className="flex items-center mr-4">
+        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4 flex-wrap gap-2">
+          <div className="flex items-center mr-2">
             <Clock size={16} className="mr-1" />
             <span>{course.duration}</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center mr-4">
             <Users size={16} className="mr-1" />
             <span>{course.students} estudiantes</span>
+          </div>
+          <div className="flex items-center">
+            <Monitor size={16} className="mr-1" />
+            <span>{course.modality}</span>
           </div>
         </div>
         
@@ -90,7 +95,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           </span>
         </div>
         
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-auto">
           <div>
             <Link 
               to={`/instructores/${course.instructor.toLowerCase().replace(/\s+/g, '-')}`}
@@ -106,10 +111,10 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         
         <button
           onClick={handleAddToCart}
-          className="mt-4 w-full flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-md transition-colors"
+          className="mt-4 w-full flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white py-3 px-4 rounded-md transition-colors"
         >
-          <ShoppingCart size={16} className="mr-2" />
-          Añadir al carrito
+          <ShoppingCart size={18} className="mr-2" />
+          Beneficios
         </button>
       </div>
     </div>
