@@ -7,6 +7,8 @@ import EventCard from '../components/ui/EventCard';
 import AnimatedNumber from '../components/ui/AnimatedNumber'; // Asegúrate de crear este componente
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
+import Logoinicio from './../medios/inicioicon.png';
+
 
 
 const containerVariants = {
@@ -87,6 +89,7 @@ const HomePage: React.FC = () => {
     <Sparkles className="absolute left-12 bottom-20 w-10 h-10 text-primary-200/30 animate-pulse delay-500" />
   </div>
 
+
   <div className="container-custom relative">
     <div className="grid lg:grid-cols-2 gap-12 items-center">
       <motion.div 
@@ -157,22 +160,36 @@ empresa alcance su máximo potencial.        </p>
           </div>
         </div>
 
-
         <motion.div 
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 4, repeat: Infinity }}
-          className="absolute -right-4 -bottom-8 bg-white p-4 rounded-xl shadow-2xl border border-gray-100"
-        >
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-primary-100 rounded-lg">
-              <Award className="w-8 h-6 text-white" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-800">+100</p>
-              <p className="text-xs text-gray-600">Estudiantes certificados</p>
-            </div>
-          </div>
-        </motion.div>
+  initial={{ x: 100, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="-mt-[80px] w-67 h-auto rounded-2xl shadow-lg"
+>
+  {/* Imagen a la derecha del texto */}
+  <img
+    src={Logoinicio}
+    alt="Icono de inicio"
+    className="w-68 h-auto rounded-2xl shadow-lg"
+  />
+
+  {/* Elemento animado flotante (lo puedes dejar o quitar) */}
+  <motion.div 
+    animate={{ y: [-10, 10, -10] }}
+    transition={{ duration: 4, repeat: Infinity }}
+    className="absolute -right-4 -bottom-8 bg-white p-4 rounded-xl shadow-2xl border border-gray-100"
+  >
+    <div className="flex items-center gap-3">
+      <div className="p-2 bg-primary-100 rounded-lg">
+        <Award className="w-8 h-6 text-white" />
+      </div>
+      <div>
+        <p className="text-sm font-semibold text-gray-800">+100</p>
+        <p className="text-xs text-gray-600">Estudiantes certificados</p>
+      </div>
+    </div>
+  </motion.div>
+</motion.div>
       </motion.div>
     </div>
   </div>
