@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Award, ChevronRight, PlayCircle, X, Sparkles, Users, BrainCircuit, Handshake, Crown} from 'lucide-react';
+import { Calendar, Award, ChevronRight, PlayCircle, X, Sparkles, Users, BrainCircuit, Handshake, Crown, GraduationCap, BriefcaseBusiness} from 'lucide-react';
 import { motion } from 'framer-motion';
 import CourseCard from '../components/ui/CourseCard';
 import EventCard from '../components/ui/EventCard';
@@ -8,9 +8,6 @@ import AnimatedNumber from '../components/ui/AnimatedNumber'; // Asegúrate de c
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
 import Logoinicio from './../medios/inicioicon.png';
-import Comercio from './../medios/comercioexterior.png';
-import Auxiliarti from './../medios/auxiliarti.png';
-import Contable from './../medios/asistcontable.png';
 
 
 
@@ -383,7 +380,9 @@ Hemos impulsado la evolución del talento y la gestión en organizaciones líder
                 {[
                   { icon: Users, text: "Acceso a comunidad privada" },
                   { icon: Calendar, text: "Eventos mensuales online" },
-                  { icon: Award, text: "Descuentos en certificaciones" }
+                  { icon: Award, text: "Descuentos en certificaciones" },
+                  { icon: BriefcaseBusiness, text: "Orientación y acompañamiento profesional" },
+                  { icon: GraduationCap, text: "Networking de Alto Valor" }
                 ].map((benefit, index) => (
                   <li key={index} className="flex items-center gap-4">
                     <div className="p-3 bg-black dark:bg-white rounded-lg">
