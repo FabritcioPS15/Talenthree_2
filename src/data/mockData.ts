@@ -1,7 +1,7 @@
 
-import Comercio from '../../medios/comercioexterior.png';
-import Auxiliarti from '../../medios/auxiliarti.png';
-import Contable from '../../medios/asistcontable.png';
+import Comercio from './../medios/comercioexterior.png';
+import Auxiliarti from './../medios/auxiliarti.png';
+import Contable from './../medios/asistcontable.png';
 export const courses = [
   {
     id: '1',
