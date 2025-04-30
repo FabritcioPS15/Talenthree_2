@@ -1,3 +1,5 @@
+
+
 export const courses = [
   {
     id: '1',
@@ -5,7 +7,7 @@ export const courses = [
     instructor: 'María Rodríguez',
     description: 'Aprende hoy las competencias contables y financieras que mañana te convertirán en pieza clave de cualquier organización...',
     price: 49.99,
-    image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'src/medios/asistcontable.png',
     duration: '4 meses',
     students: 1258,
     rating: 4.8,
@@ -18,7 +20,7 @@ export const courses = [
     instructor: 'Carlos López',
     description: 'Gestiona oportunidades de negocio en el comercio exterior y conecta empresas con nuevos mercados alrededor del mundo...',
     price: 59.99,
-    image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'src/medios/comercioexterior.png',
     duration: '6 meses',
     students: 842,
     rating: 4.6,
@@ -31,7 +33,7 @@ export const courses = [
     instructor: 'Ana Martínez',
     description: 'Aprende a brindar soporte básico de sistemas, atención técnica, manejo de bases de datos simples, gestión de hardware y software ...',
     price: 69.99,
-    image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'src/medios/auxiliarti.png',
     duration: '4 meses',
     students: 43,
     rating: 4.9,

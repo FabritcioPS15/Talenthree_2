@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, Users, Star, ShoppingCart, Monitor } from 'lucide-react';
 import { useCart } from '../../contexts/CartContext';
+import Comercio from './../medios/comercioexterior.png';
+import Auxiliarti from './../medios/auxiliarti.png';
+import Contable from './../medios/asistcontable.png';
+
 
 export interface CourseProps {
   id: string;

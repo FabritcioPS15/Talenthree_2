@@ -8,6 +8,12 @@ import AnimatedNumber from '../components/ui/AnimatedNumber'; // Asegúrate de c
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
 import Logoinicio from './../medios/inicioicon.png';
+import Comercio from './../medios/comercioexterior.png';
+import Auxiliarti from './../medios/auxiliarti.png';
+import Contable from './../medios/asistcontable.png';
+
+
+
 
 
 
@@ -154,8 +160,7 @@ empresa alcance su máximo potencial.        </p>
         className="relative -mt-8 lg:mt-12"
         >
         <div className="relative group">
-          <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-30 group-hover:opacity-50 blur-xl transition-all duration-300"></div>
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-10"></div>
+
           <div className="relative overflow-hidden rounded-2xl transform rotate-1 group-hover:rotate-0 transition-all duration-300">
           </div>
         </div>
