@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Logo from '../../medios/logo.png';
+import Logo from '../../medios/ttlogo.png';
 
 
 const Footer: React.FC = () => {
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
 <img
   src={Logo}
   alt="TALENTHREE"
-  className="h-14 w-14 filter invert brightness-0"
+  className="h-8 w-8 filter invert brightness-0 mr-2 -mt-2"
 />
 
               </motion.div>

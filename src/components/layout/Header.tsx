@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { useCart } from '../../contexts/CartContext';
-import Logo from '../../medios/logo.png';
+import Logo from '../../medios/ttlogo.png';
 import '@fontsource/noto-sans/400.css';
 import '@fontsource/noto-sans/500.css';
 import '@fontsource/noto-sans/600.css';
@@ -165,7 +165,7 @@ const Header: React.FC = () => {
       <img 
   src={Logo}
   alt="Logo Talenthree" 
-        className="h-14 w-14 object-contain" 
+        className="h-10 w-10 object-contain" 
       />
       <span className="ml-2 text-2xl font-bold tracking-tight">Talenthree</span>
     </div>
