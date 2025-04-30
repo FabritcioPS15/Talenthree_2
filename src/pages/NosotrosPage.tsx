@@ -43,7 +43,7 @@ const NosotrosPage: React.FC = () => {
   ];
 
   return (
-    <div className="dark:bg-gray-900">
+    <div className= "bg-white/90  dark:bg-gray-900">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-20">
         <motion.div
@@ -59,40 +59,59 @@ const NosotrosPage: React.FC = () => {
           </p>
         </motion.div>
       </section>
-      {/* Nueva sección Acerca de Nosotros */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            className="grid md:grid-cols-2 gap-12 items-center"
-          >
-            <motion.div variants={itemVariants} className="space-y-6">
-              <h2 className="text-3xl font-bold mb-6 dark:text-white">Acerca de TalentThree</h2>
-              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-                En TalentThree, somos pioneros en la transformación del desarrollo profesional y 
-                organizacional. Desde nuestra fundación en 2019, hemos ayudado a más de 10,000 
-                profesionales y 500 empresas a alcanzar su máximo potencial mediante soluciones 
-                innovadoras en:
-              </p>
-              <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
-                <li>Desarrollo de talento humano</li>
-                <li>Capacitación especializada</li>
-                <li>Consultoría organizacional</li>
-                <li>Tecnologías educativas de vanguardia</li>
-              </ul>
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <img 
-                src="https://images.pexels.com/photos/7691647/pexels-photo-7691647.jpeg" 
-                alt="Equipo TalentThree" 
-                className="rounded-xl shadow-2xl hover:shadow-3xl transition-shadow duration-300"
-              />
-            </motion.div>
-          </motion.div>
+
+      {/* Acerca de Nosotros con fondo animado */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Fondo animado */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-500 via-secondary-400 to-accent-500 opacity-15 animate-gradient-flow"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-dark-900/80"></div>
         </div>
+
+        {/* Contenido centrado */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 text-center px-4 max-w-4xl mx-auto"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 dark:text-white">
+            Sobre <span className="text-primary-500">TalentThree</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            En TalentThree, somos más que una plataforma educativa. Somos un ecosistema comprometido con el
+            desarrollo profesional integral. Combinamos tecnología de vanguardia con metodologías pedagógicas
+            innovadoras para ofrecer una experiencia de aprendizaje transformadora.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="bg-white/90 dark:bg-gray-800 p-6 rounded-xl backdrop-blur-sm"
+            >
+              <h3 className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">10,000+</h3>
+              <p className="text-gray-600 dark:text-gray-300">Profesionales capacitados</p>
+            </motion.div>
+            
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="bg-white/90 dark:bg-gray-800 p-6 rounded-xl backdrop-blur-sm"
+            >
+              <h3 className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">500+</h3>
+              <p className="text-gray-600 dark:text-gray-300">Empresas transformadas</p>
+            </motion.div>
+            
+            <motion.div 
+              whileHover={{ y: -10 }}
+              className="bg-white/90 dark:bg-gray-800 p-6 rounded-xl backdrop-blur-sm"
+            >
+              <h3 className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">98%</h3>
+              <p className="text-gray-600 dark:text-gray-300">Satisfacción de clientes</p>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
+
       {/* Mission & Vision */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">

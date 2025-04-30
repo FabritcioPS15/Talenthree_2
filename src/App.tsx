@@ -4,10 +4,6 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
 import Layout from './components/layout/Layout';
-import '@fontsource/noto-sans/400.css';
-import '@fontsource/noto-sans/500.css';
-import '@fontsource/noto-sans/600.css';
-import '@fontsource/noto-sans/700.css';
 
 // Pages
 import HomePage from './pages/HomePage';

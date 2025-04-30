@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import CourseCard from '../components/ui/CourseCard';
 import EventCard from '../components/ui/EventCard';
 import AnimatedNumber from '../components/ui/AnimatedNumber'; // Asegúrate de crear este componente
-import InstructorCard from '../components/ui/InstructorCard';
 import CompanyCarousel from '../components/ui/CompanyCarousel';
 import { courses, events, instructors } from '../data/mockData';
 
@@ -37,7 +36,6 @@ const HomePage: React.FC = () => {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const featuredCourses = courses.slice(0, 3);
   const featuredEvents = events.filter(event => event.isFeatured).slice(0, 2);
-  const featuredInstructors = instructors.slice(0, 3);
 
   return (
     <div className="overflow-x-hidden">
@@ -377,40 +375,6 @@ Hemos impulsado la evolución del talento y la gestión en organizaciones líder
           </div>
         </div>
       </section>
-
-      {/* Instructores */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-950">
-        <div className="container-custom">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-4">
-              Conoce a nuestros <span className="text-primary-500">instructores</span>
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-xl">
-              Profesionales con experiencia en empresas líderes del sector
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="grid md:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {featuredInstructors.map((instructor) => (
-              <motion.div key={instructor.id} variants={itemVariants}>
-                <InstructorCard instructor={instructor} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA Final */}
       <section className="relative py-24 bg-gradient-to-r from-primary-700 to-secondary-700 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/uploads/dotnoise-light-grey.png')]"></div>
