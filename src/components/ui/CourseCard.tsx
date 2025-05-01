@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Users, Star, ShoppingCart, Monitor } from 'lucide-react';
+import { Clock, Users, Star, ShoppingCart, Monitor, Tag } from 'lucide-react'; // Importar icono para categoría
 import { useCart } from '../../contexts/CartContext';
-import Comercio from './../medios/comercioexterior.png';
-import Auxiliarti from './../medios/auxiliarti.png';
-import Contable from './../medios/asistcontable.png';
-
 
 export interface CourseProps {
   id: string;
@@ -19,6 +15,7 @@ export interface CourseProps {
   rating: number;
   level: 'Principiante' | 'Intermedio' | 'Avanzado';
   modality: 'Virtual' | 'Presencial' | 'Hibtido'; // Nueva propiedad
+  category: 'Desarrollo Personal' | 'Formación Laboral' | 'Talleres y Diplomas' | 'Diplomados'; // Nueva propiedad
 }
 
 interface CourseCardProps {
@@ -79,6 +76,12 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             <Monitor size={16} className="mr-1" />
             <span>{course.modality}</span>
           </div>
+        </div>
+
+        {/* Nueva sección para la categoría */}
+        <div className="flex items-center mb-4">
+          <Tag size={16} className="mr-2 text-primary-600 dark:text-primary-400" />
+          <span className="text-sm text-gray-600 dark:text-gray-400">{course.category}</span>
         </div>
         
         <div className="flex items-center mb-4">

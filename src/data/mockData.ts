@@ -2,6 +2,7 @@
 import Comercio from './../medios/comercioexterior.png';
 import Auxiliarti from './../medios/auxiliarti.png';
 import Contable from './../medios/asistcontable.png';
+import { BiCategory } from 'react-icons/bi';
 export const courses = [
   {
     id: '1',
@@ -15,6 +16,7 @@ export const courses = [
     rating: 4.8,
     modality: 'Virtual' as const,
     level: 'Principiante' as const,
+    category: 'Desarrollo Personal' as const
   },
   {
     id: '2',
@@ -28,6 +30,7 @@ export const courses = [
     rating: 4.6,
     modality: 'Virtual' as const,
     level: 'Intermedio' as const,
+    category: 'Formación Laboral' as const
   },
   {
     id: '3',
@@ -41,6 +44,7 @@ export const courses = [
     rating: 4.9,
     modality: 'Hibrido' as const,
     level: 'Principiante' as const,
+    category: 'Formación Laboral' as const
   },
   {
     id: '4',
@@ -53,6 +57,7 @@ export const courses = [
     students: 1547,
     rating: 4.7,
     level: 'Principiante' as const,
+    category: 'Formación Laboral' as const
   },
   {
     id: '5',
@@ -65,6 +70,7 @@ export const courses = [
     students: 412,
     rating: 4.8,
     level: 'Avanzado' as const,
+    category: 'Formación Laboral' as const
   },
   {
     id: '6',
@@ -77,6 +83,7 @@ export const courses = [
     students: 928,
     rating: 4.5,
     level: 'Principiante' as const,
+    category: 'Formación Laboral' as const
   },
 ];
 

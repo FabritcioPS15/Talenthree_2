@@ -24,7 +24,16 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'Inicio', path: '/' },
     { name: 'Nosotros', path: '/nosotros' },
-    { name: 'Educación continua', path: '/cursos' },
+    {
+      name: 'Educación continua',
+      path: '/cursos',
+      subLinks: [
+        { name: 'Desarrollo Personal', path: '/cursos?filter=desarrollo-personal' },
+        { name: 'Formación Laboral', path: '/cursos?filter=formacion-laboral' },
+        { name: 'Talleres y Diplomas', path: '/cursos?filter=talleres-diplomas' },
+        { name: 'Diplomados', path: '/cursos?filter=diplomados' },
+      ],
+    },
     { name: 'Noticias y eventos', path: '/eventos' },
     { name: 'Asesoría y Consultoría', path: '/instructores' },
     { name: 'Contáctanos', path: '/contacto' },
@@ -156,21 +165,21 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-  initial="hidden"
-  animate="visible"
-  variants={logoVariants}
->
-  <Link to="/" className="flex items-center">
-    <div className="flex items-center text-primary-600 dark:text-primary-400">
-      <img 
-  src={Logo}
-  alt="Logo Talenthree" 
-        className="h-10 w-10 object-contain" 
-      />
-      <span className="ml-2 text-2xl font-bold tracking-tight">Talenthree</span>
-    </div>
-  </Link>
-</motion.div>
+            initial="hidden"
+            animate="visible"
+            variants={logoVariants}
+          >
+            <Link to="/" className="flex items-center">
+              <div className="flex items-center text-primary-600 dark:text-primary-400">
+                <img 
+                  src={Logo}
+                  alt="Logo Talenthree" 
+                  className="h-8 w-8 object-contain -mt-2" 
+                />
+                <span className="ml-2 text-2xl font-bold tracking-tight">Talenthree</span>
+              </div>
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation - Ahora completamente visible */}
           <nav className="hidden lg:flex items-center space-x-1">
@@ -182,6 +191,7 @@ const Header: React.FC = () => {
                 animate="visible"
                 variants={navItemVariants}
                 whileHover={{ scale: 1.05 }}
+                className="relative group"
               >
                 <Link
                   to={link.path}
@@ -200,6 +210,25 @@ const Header: React.FC = () => {
                     />
                   )}
                 </Link>
+
+  {/* Submenu */}
+  {link.subLinks && (
+                  <div className="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-gray-900 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+                    {link.subLinks.map((subLink) => (
+                      <Link
+                        key={subLink.path}
+                        to={subLink.path}
+                        className={`block px-4 py-2 text-sm transition-colors ${
+                          location.search.includes(subLink.path.split('?filter=')[1])
+                            ? 'text-primary-700 dark:text-primary-400 font-semibold'
+                            : 'text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400'
+                        }`}
+                      >
+                        {subLink.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             ))}
           </nav>
@@ -416,6 +445,20 @@ const Header: React.FC = () => {
                   >
                     {link.name}
                   </Link>
+                  {link.subLinks && (
+                    <div className="mt-2 space-y-1">
+                      {link.subLinks.map((subLink) => (
+                        <Link
+                          key={subLink.path}
+                          to={subLink.path}
+                          className="block px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {subLink.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               ))}
 
@@ -547,4 +590,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header; 
+export default Header;

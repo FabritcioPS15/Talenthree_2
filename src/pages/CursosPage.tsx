@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import CourseCard from '../components/ui/CourseCard';
 import { courses } from '../data/mockData';
-import { Search, Filter, Rocket, BookOpen, GraduationCap } from 'lucide-react';
+import { Search, Filter, Rocket, GraduationCap } from 'lucide-react';
 
 // Animaciones
 const containerVariants = {
@@ -20,52 +21,84 @@ const itemVariants = {
   show: { opacity: 1, y: 0 },
   hover: { scale: 1.02 }
 };
+const toSlug = (str: string) => 
+  str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Eliminar acentos
+    .replace(/\s+/g, '-') // Reemplazar espacios por guiones
+    .replace(/[^a-z0-9-]/g, ''); // Eliminar caracteres especiales
+
+const categorySlugMap: { [key: string]: string } = {
+  'desarrollo-personal': 'Desarrollo Personal',
+  'formacion-laboral': 'Formación Laboral',
+  'talleres-diplomas': 'Talleres y Diplomas',
+  'diplomados': 'Diplomados'
+};
 
 const CursosPage: React.FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedLevel, setSelectedLevel] = useState<string>('');
-  const [sortBy, setSortBy] = useState<string>('');
+  const [selectedCategory, setSelectedCategory] = useState<string>(''); // Filtro por categoría
+  const [selectedLevel, setSelectedLevel] = useState<string>(''); // Filtro por nivel
+
+  // Sincronizar el filtro de categoría con la URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const categorySlug = params.get('filter') || '';
+    
+    // Convertir slug a nombre de categoría real
+    const categoryName = categorySlugMap[categorySlug] || '';
+    setSelectedCategory(categoryName);
+  }, [location.search]);
+
+  const handleCategoryChange = (categorySlug: string) => {
+    const params = new URLSearchParams(location.search);
+    
+    if (categorySlug) {
+      params.set('filter', categorySlug);
+    } else {
+      params.delete('filter');
+    }
+    
+    navigate({ search: params.toString() });
+  };
 
   const filteredCourses = courses.filter(course => {
     const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                          course.instructor.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory ? 
+      toSlug(course.category) === toSlug(selectedCategory) : true; // Normalizar ambas categorías
     const matchesLevel = selectedLevel ? course.level === selectedLevel : true;
-    
-    return matchesSearch && matchesLevel;
-  });
 
-  const sortedCourses = [...filteredCourses].sort((a, b) => {
-    if (sortBy === 'price-asc') return a.price - b.price;
-    if (sortBy === 'price-desc') return b.price - a.price;
-    if (sortBy === 'rating') return b.rating - a.rating;
-    if (sortBy === 'students') return b.students - a.students;
-    return 0;
+    return matchesSearch && matchesCategory && matchesLevel;
   });
 
   return (
     <div className="dark:bg-gray-900">
-{/* Hero Section */}
-<section className="bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-10">
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    className="container-custom text-center"
-  >
-    <motion.div
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      className="inline-block mb-4"
-    >
-    </motion.div>
-    <h1 className="text-4xl md:text-5xl font-bold mb-4">
-      Explora Nuestros Cursos<span className="text-secondary-400"></span>
-    </h1>
-    <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-      Domina nuevas habilidades con nuestra colección de cursos profesionales
-    </p>
-  </motion.div>
-</section>
-
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="container-custom text-center"
+        >
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            className="inline-block mb-4"
+          >
+          </motion.div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Explora Nuestros Cursos<span className="text-secondary-400"></span>
+          </h1>
+          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+            Domina nuevas habilidades con nuestra colección de cursos profesionales
+          </p>
+        </motion.div>
+      </section>
 
       {/* Filtros */}
       <motion.section
@@ -94,40 +127,38 @@ const CursosPage: React.FC = () => {
               />
             </motion.div>
 
-            {/* Filtros */}
-            <motion.div variants={itemVariants} className="flex gap-3">
-              <div className="relative flex-grow">
-                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                  <Filter size={16} className="text-gray-500" />
-                </div>
-                <select
-                  value={selectedLevel}
-                  onChange={(e) => setSelectedLevel(e.target.value)}
-                  className="pl-4 pr-8 py-3 w-full border border-gray-300 dark:border-gray-700 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800 dark:text-white"
-                >
-                  <option value="">Todos los niveles</option>
-                  <option value="Principiante">Principiante</option>
-                  <option value="Intermedio">Intermedio</option>
-                  <option value="Avanzado">Avanzado</option>
-                </select>
+            {/* Filtros por categoría */}
+            <motion.div variants={itemVariants} className="relative flex-grow">
+              <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <Filter size={16} className="text-gray-500" />
               </div>
+              <select
+                value={Object.keys(categorySlugMap).find(key => categorySlugMap[key] === selectedCategory) || ''}
+                onChange={(e) => handleCategoryChange(e.target.value)}
+                className="pl-4 pr-8 py-3 w-full border border-gray-300 dark:border-gray-700 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800 dark:text-white"
+              >
+                <option value="">Todas las categorías</option>
+                {Object.entries(categorySlugMap).map(([slug, name]) => (
+                  <option key={slug} value={slug}>{name}</option>
+                ))}
+              </select>
+            </motion.div>
 
-              <div className="relative flex-grow">
-                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                  <Filter size={16} className="text-gray-500" />
-                </div>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="pl-4 pr-8 py-3 w-full border border-gray-300 dark:border-gray-700 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800 dark:text-white"
-                >
-                  <option value="">Ordenar por</option>
-                  <option value="price-asc">Precio ascendente</option>
-                  <option value="price-desc">Precio descendente</option>
-                  <option value="rating">Mejor valorados</option>
-                  <option value="students">Más populares</option>
-                </select>
+            {/* Filtros por nivel */}
+            <motion.div variants={itemVariants} className="relative flex-grow">
+              <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <Filter size={16} className="text-gray-500" />
               </div>
+              <select
+                value={selectedLevel}
+                onChange={(e) => setSelectedLevel(e.target.value)}
+                className="pl-4 pr-8 py-3 w-full border border-gray-300 dark:border-gray-700 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800 dark:text-white"
+              >
+                <option value="">Todos los niveles</option>
+                <option value="Principiante">Principiante</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzado">Avanzado</option>
+              </select>
             </motion.div>
           </motion.div>
         </div>
@@ -137,7 +168,7 @@ const CursosPage: React.FC = () => {
       <section className="py-12 bg-gray-50 dark:bg-gray-950">
         <div className="container-custom">
           <AnimatePresence mode='wait'>
-            {sortedCourses.length > 0 ? (
+            {filteredCourses.length > 0 ? (
               <motion.div
                 key="courses"
                 initial={{ opacity: 0 }}
@@ -145,7 +176,7 @@ const CursosPage: React.FC = () => {
                 exit={{ opacity: 0 }}
               >
                 <p className="text-gray-600 dark:text-gray-400 mb-8">
-                  Mostrando {sortedCourses.length} de {courses.length} cursos
+                  Mostrando {filteredCourses.length} de {courses.length} cursos
                 </p>
                 
                 <motion.div
@@ -154,7 +185,7 @@ const CursosPage: React.FC = () => {
                   initial="hidden"
                   animate="show"
                 >
-                  {sortedCourses.map((course) => (
+                  {filteredCourses.map((course) => (
                     <motion.div
                       key={course.id}
                       variants={itemVariants}
