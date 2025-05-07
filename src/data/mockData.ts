@@ -56,6 +56,7 @@ export const courses = [
     duration: '20 horas',
     students: 1547,
     rating: 4.7,
+    modality: 'Hibrido' as const,
     level: 'Principiante' as const,
     category: 'Formación Laboral' as const
   },
@@ -69,6 +70,7 @@ export const courses = [
     duration: '16 horas',
     students: 412,
     rating: 4.8,
+    modality: 'Hibrido' as const,
     level: 'Avanzado' as const,
     category: 'Formación Laboral' as const
   },
@@ -82,6 +84,35 @@ export const courses = [
     duration: '14 horas',
     students: 928,
     rating: 4.5,
+    modality: 'Hibrido' as const,
+    level: 'Principiante' as const,
+    category: 'Formación Laboral' as const
+  },
+  {
+    id: '7',
+    title: 'Inteligencia emocional y gestión del estrés',
+    instructor: 'Miguel Torres',
+    description: 'Fundamentos de seguridad informática, hacking ético y protección de sistemas y datos.',
+    price: 64.99,
+    image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    duration: '120 minutos',
+    students: 530,
+    rating: 4,
+    modality: 'Virtual' as const,
+    level: 'Principiante' as const,
+    category: 'Formación Laboral' as const
+  },
+  {
+    id: '8',
+    title: 'Comunicación Efectiva y Asertiva',
+    instructor: 'Miguel Torres',
+    description: 'Fundamentos de seguridad informática, hacking ético y protección de sistemas y datos.',
+    price: 64.99,
+    image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    duration: '14 horas',
+    students: 928,
+    rating: 4.5,
+    modality: 'Virtual' as const,
     level: 'Principiante' as const,
     category: 'Formación Laboral' as const
   },

@@ -365,7 +365,7 @@ Hemos impulsado la evolución del talento y la gestión en organizaciones líder
             </motion.div>
 
             <motion.div 
-              className="bg-primary-50 dark:bg-primary-900/20 p-8 rounded-2xl border border-primary-100 dark:border-primary-800"
+              className="bg-white dark:bg-primary-900/20 p-8 rounded-2xl border border-primary-100 dark:border-primary-800"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -380,7 +380,7 @@ Hemos impulsado la evolución del talento y la gestión en organizaciones líder
                   { icon: GraduationCap, text: "Networking de Alto Valor" }
                 ].map((benefit, index) => (
                   <li key={index} className="flex items-center gap-4">
-                    <div className="p-3 bg-black dark:bg-white rounded-lg">
+                    <div className="p-3 bg-primary-100 dark:bg-white rounded-lg">
                       <benefit.icon className="w-6 h-6 text-white dark:text-primary-200" />
                     </div>
                     <span className="text-white-700 dark:text-white-300">{benefit.text}</span>
@@ -411,7 +411,7 @@ Hemos impulsado la evolución del talento y la gestión en organizaciones líder
                   to="/registro" 
                   className="btn bg-white text-primary-700 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold shadow-lg flex items-center gap-2"
                 >
-                  Crear cuenta gratis
+                  Regístrame
                   <Sparkles size={20} />
                 </Link>
               </motion.div>

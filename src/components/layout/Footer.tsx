@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-<footer className="bg-gradient-to-r from-purple-950 via-purple-900 to-purple-950 text-gray-100 pt-20 pb-12 border-t-2 border-purple-800">
+<footer className="bg-gradient-to-r from-white to-white text-gray-100 pt-20 pb-12 border-t-2 border-purple-800">
 <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20"
@@ -63,23 +63,25 @@ const Footer: React.FC = () => {
 <img
   src={Logo}
   alt="TALENTHREE"
-  className="h-8 w-8 filter invert brightness-0 mr-2 -mt-2"
+  className="h-8 w-8 filter mr-2 -mt-2"
 />
 
               </motion.div>
               <motion.span 
-  className="ml-0 font-bold text-2xl text-white tracking-tight"
+  className="ml-0 font-bold text-2xl text-primary-100 tracking-tight"
   whileHover={{ scale: 1.02 }}
 >
   TalentThree
 </motion.span>
             </div>
             <motion.p 
-              className="text-purple-200 leading-relaxed"
+              className="text-primary-200 leading-relaxed"
               whileHover={{ x: 5 }}
             >
-              Impulsamos tu desarrollo profesional con formación de excelencia y eventos de alto nivel para líderes del mañana.
-            </motion.p>
+Impulsa tu futuro ahora. Aprende
+con expertos, aplica lo aprendido y
+alcanza nuevas metas con
+Talenthree.            </motion.p>
             <div className="flex space-x-4 pt-2">
               {[
                 { href: "https://facebook.com", icon: <Facebook size={20} />, label: "Facebook" },
@@ -112,7 +114,7 @@ const Footer: React.FC = () => {
             variants={itemVariants}
           >
             <motion.h3 
-              className="text-xl font-semibold text-white mb-6 pb-2 border-b border-purple-800"
+              className="text-xl font-semibold text-primary-100 mb-6 pb-2 border-b border-purple-800"
               whileHover={{ scale: 1.02 }}
             >
               Enlaces rápidos
@@ -121,10 +123,10 @@ const Footer: React.FC = () => {
               {[
                 { to: "/", label: "Inicio" },
                 { to: "/nosotros", label: "Nosotros" },
-                { to: "/cursos", label: "Cursos" },
-                { to: "/eventos", label: "Eventos" },
-                { to: "/instructores", label: "Nuestros Expertos" },
-                { to: "/contacto", label: "Contacto" },
+                { to: "/cursos", label: "Educación continua" },
+                { to: "/instructores", label: "Asesoría y Consultoría" },
+                { to: "/eventos", label: "Noticias y eventos" },
+                { to: "/contacto", label: "Contáctanos" },
               ].map(({ to, label }, index) => (
                 <motion.li 
                   key={label}
@@ -135,7 +137,7 @@ const Footer: React.FC = () => {
   to={to}
   className={({ isActive }) =>
     `flex items-center gap-2 font-medium transition-all duration-300 hover:text-purple-400 ${
-      isActive ? "text-purple-600 font-semibold" : "text-purple-300"
+      isActive ? "text-purple-700 font-semibold" : "text-purple-500"
     }`
   }
 >
@@ -146,7 +148,7 @@ const Footer: React.FC = () => {
     >
       {label}
       {isActive && (
-        <Check size={16} className="text-purple-600" />
+        <Check size={16} className="text-purple-700" />
       )}
     </motion.div>
   )}
@@ -162,7 +164,7 @@ const Footer: React.FC = () => {
             variants={itemVariants}
           >
             <motion.h3 
-              className="text-xl font-semibold text-white mb-6 pb-2 border-b border-purple-800"
+              className="text-xl font-semibold text-primary-100 mb-6 pb-2 border-b border-purple-800"
               whileHover={{ scale: 1.02 }}
             >
               Soporte
@@ -185,7 +187,7 @@ const Footer: React.FC = () => {
   to={to}
   className={({ isActive }) =>
     `flex items-center gap-2 font-medium transition-all duration-300 hover:text-purple-400 ${
-      isActive ? "text-purple-600 font-semibold" : "text-purple-300"
+      isActive ? "text-purple-700 font-semibold" : "text-purple-500"
     }`
   }
 >
@@ -196,7 +198,7 @@ const Footer: React.FC = () => {
     >
       {label}
       {isActive && (
-        <Check size={16} className="text-purple-600" />
+        <Check size={16} className="text-purple-700" />
       )}
     </motion.div>
   )}
@@ -213,7 +215,7 @@ const Footer: React.FC = () => {
             variants={itemVariants}
           >
             <motion.h3 
-              className="text-xl font-semibold text-white mb-6 pb-2 border-b border-purple-800"
+              className="text-xl font-semibold text-primary-100 mb-6 pb-2 border-b border-purple-800"
               whileHover={{ scale: 1.02 }}
             >
               Contacto
@@ -224,14 +226,15 @@ const Footer: React.FC = () => {
                 whileHover={{ x: 5 }}
               >
                 <motion.div 
-                  className="bg-purple-800 p-2 rounded-lg mr-4"
+                  className="bg-primary-100 p-2 rounded-lg mr-4"
                   whileHover={{ rotate: 15 }}
                 >
-                  <MapPin size={18} className="text-purple-300" />
+                  <MapPin size={18} className="text-white" />
                 </motion.div>
                 <div>
-                  <h4 className="font-medium text-white">Oficina Principal</h4>
-                  <p className="text-purple-200 mt-1">Torre Empresarial, Av. Principal 1234, Piso 15<br />Ciudad Corporativa</p>
+                  <h5 className="font-medium text-primary-100">Oficina Principal</h5>
+                  <p className="text-primary-100 mt-1">Av. Simón Bolívar 460, 401.
+                  Pueblo Libre<br /></p>
                 </div>
               </motion.div>
               
@@ -240,16 +243,16 @@ const Footer: React.FC = () => {
                 whileHover={{ x: 5 }}
               >
                 <motion.div 
-                  className="bg-purple-800 p-2 rounded-lg mr-4"
+                  className="bg-primary-100 p-2 rounded-lg mr-4"
                   whileHover={{ rotate: 15 }}
                 >
-                  <Phone size={18} className="text-purple-300" />
+                  <Phone size={18} className="text-white" />
                 </motion.div>
                 <div>
-                  <a href="tel:+123456789" className="font-medium text-white hover:text-purple-300 transition-colors">
-                    +1 (234) 567-8900
+                  <a href="tel:+123456789" className="font-medium text-primary-100 hover:text-purple-300 transition-colors">
+                  (+51) 919746504
                   </a>
-                  <p className="text-purple-200 text-sm mt-1">Lunes a Viernes, 9am - 6pm</p>
+                  <p className="text-primary-100 text-sm mt-1">Lunes a sábado de 8am a 6pm</p>
                 </div>
               </motion.div>
               
@@ -258,16 +261,16 @@ const Footer: React.FC = () => {
                 whileHover={{ x: 5 }}
               >
                 <motion.div 
-                  className="bg-purple-800 p-2 rounded-lg mr-4"
+                  className="bg-primary-100 p-2 rounded-lg mr-4"
                   whileHover={{ rotate: 15 }}
                 >
-                  <Mail size={18} className="text-purple-300" />
+                  <Mail size={18} className="text-white" />
                 </motion.div>
                 <div>
-                  <a href="mailto:info@talenthree.com" className="font-medium text-white hover:text-purple-300 transition-colors">
-                    contacto@talenthree.com
+                  <a href="mailto:info@talenthree.com" className="font-medium text-primary-100 hover:text-purple-300 transition-colors">
+                  contacto@talenthree.com
                   </a>
-                  <p className="text-purple-200 text-sm mt-1">Respuesta en 24 horas</p>
+                  <p className="text-primary-100 text-sm mt-1">Respuesta en 24 horas</p>
                 </div>
               </motion.div>
             </div>
@@ -275,7 +278,7 @@ const Footer: React.FC = () => {
         </motion.div>
 
         <motion.div 
-          className="border-t border-purple-800 mt-16 pt-10 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-primary-100 mt-16 pt-10 flex flex-col md:flex-row justify-between items-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
@@ -283,10 +286,10 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
             <motion.p 
-              className="text-purple-300 text-sm"
+              className="text-primary-100 text-sm"
               whileHover={{ scale: 1.02 }}
             >
-              &copy; {currentYear} TalentThree International. Todos los derechos reservados.
+              &copy; {currentYear} Talenthree International. Todos los derechos reservados.
             </motion.p>
             <div className="flex space-x-4">
               {[
@@ -300,7 +303,7 @@ const Footer: React.FC = () => {
                   to={to}
                   className={({ isActive }) =>
                     `text-sm transition-colors ${
-                      isActive ? "text-purple-400 font-medium" : "text-purple-300 hover:text-purple-200"
+                      isActive ? "text-primary-100 font-medium" : "text-primary-100 hover:text-purple-600"
                     }`
                   }
                 >
@@ -318,8 +321,8 @@ const Footer: React.FC = () => {
             className="mt-6 md:mt-0"
             whileHover={{ scale: 1.02 }}
           >
-            <p className="text-purple-300 text-sm">
-              Certificaciones: <span className="text-purple-400">ISO 9001:2023</span> • <span className="text-purple-400">Empresa B</span>
+            <p className="text-primary-100 text-sm">
+              Certificaciones: <span className="text-primary-100">ISO 9001:2023</span> • <span className="text-purple-400"></span>
             </p>
           </motion.div>
         </motion.div>

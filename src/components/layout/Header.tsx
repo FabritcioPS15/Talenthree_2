@@ -34,8 +34,8 @@ const Header: React.FC = () => {
         { name: 'Diplomados', path: '/cursos?filter=diplomados' },
       ],
     },
-    { name: 'Noticias y eventos', path: '/eventos' },
     { name: 'Asesoría y Consultoría', path: '/instructores' },
+    { name: 'Noticias y eventos', path: '/eventos' },
     { name: 'Contáctanos', path: '/contacto' },
   ];
 
