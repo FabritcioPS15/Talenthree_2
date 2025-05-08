@@ -325,7 +325,7 @@ const Header: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* User Menu - Desktop */}
+           {/*
             <motion.div 
               className="relative user-menu hidden lg:block"
               initial={{ opacity: 0, y: -10 }}
@@ -404,7 +404,7 @@ const Header: React.FC = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </motion.div> */}
 
             {/* Mobile Menu Button */}
             <motion.button

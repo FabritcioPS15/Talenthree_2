@@ -403,15 +403,15 @@ Hemos impulsado la evolución del talento y la gestión en organizaciones líder
           >
             <h2 className="text-4xl font-bold mb-6">¿Listo para comenzar?</h2>
             <p className="text-xl opacity-90 mb-8">
-              Regístrate ahora y obtén acceso inmediato a contenido gratuito
+              Obtén acceso inmediato a contenido gratuito
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
-                  to="/registro" 
+                  to="/eventos" 
                   className="btn bg-white text-primary-700 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-semibold shadow-lg flex items-center gap-2"
                 >
-                  Regístrame
+                  Ir a eventos
                   <Sparkles size={20} />
                 </Link>
               </motion.div>

@@ -50,24 +50,30 @@ const ContactoPage: React.FC = () => {
 
   return (
     <div className="dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-10">
+      {/* Sección Hero */}
+      <section className="relative bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Equipo trabajando"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="container-custom text-center"
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-4 text-center relative z-10"
         >
-          <motion.div
-            initial={{ scale: 0 }}
+          <motion.h1
+            initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
-            className="inline-block mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6"
           >
-          </motion.div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">
-            Contáctanos <span className="text-black-400"></span>
-          </h1>
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-            Conéctate con líderes de la industria y amplía tu red profesional
+            Contáctanos
+          </motion.h1>
+          <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">
+            Transforma tu carrera con nuestra guía experta. Estamos aquí para ayudarte en cada paso.
           </p>
         </motion.div>
       </section>
@@ -88,24 +94,26 @@ const ContactoPage: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700"
               >
-                <h2 className="text-3xl font-bold mb-8">Información</h2>
+                <h2 className="text-3xl font-bold mb-8">Información de Contacto</h2>
                 <div className="space-y-8">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="p-3 bg-white dark:bg-primary-900/20 rounded-lg">
+                      <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-lg">
                         {item.icon}
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                        <p className="text-gray-700 dark:text-gray-300">{item.content}</p>
+                        <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
+                          {item.content}
+                        </p>
                       </div>
                     </div>
                   ))}
                 </div>
                 <motion.img
-                  src="/contact-office.jpg"
-                  alt="Oficina"
-                  className="mt-8 rounded-xl shadow-lg"
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Equipo de soporte"
+                  className="mt-8 rounded-xl shadow-lg h-64 w-full object-cover"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
@@ -116,8 +124,13 @@ const ContactoPage: React.FC = () => {
             {/* Formulario */}
             <motion.div
               variants={itemVariants}
-              className="lg:col-span-2 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700"
+              className="lg:col-span-2 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 relative"
             >
+              <img
+                src="/contact-form.svg"
+                alt="Ilustración contacto"
+                className="absolute -top-20 -right-10 w-40 opacity-10 hidden lg:block"
+              />
               <h2 className="text-3xl font-bold mb-8">Envíanos un Mensaje</h2>
               
               <AnimatePresence>
@@ -143,6 +156,7 @@ const ContactoPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent"
+                      placeholder="Tu nombre"
                     />
                   </motion.div>
                   
@@ -155,6 +169,7 @@ const ContactoPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent"
+                      placeholder="tu@email.com"
                     />
                   </motion.div>
                 </div>
@@ -167,6 +182,7 @@ const ContactoPage: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent"
+                    placeholder="¿Cómo podemos ayudarte?"
                   />
                 </motion.div>
 
@@ -179,6 +195,7 @@ const ContactoPage: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent"
+                    placeholder="Describe tu consulta o proyecto..."
                   />
                 </motion.div>
 
@@ -212,10 +229,13 @@ const ContactoPage: React.FC = () => {
       <section className="py-16 bg-gray-50 dark:bg-gray-950">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
+            <div className="inline-block bg-primary-100 dark:bg-primary-900/20 p-4 rounded-2xl mb-6">
+              <MapPin size={48} className="text-primary-600 dark:text-primary-400" />
+            </div>
             <h2 className="text-3xl font-bold mb-4">Nuestra Ubicación</h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
               Visita nuestras modernas instalaciones en el corazón de la ciudad
@@ -223,20 +243,18 @@ const ContactoPage: React.FC = () => {
           </motion.div>
 
           <motion.div
-            whileHover="hover"
-            className="relative h-96 rounded-2xl overflow-hidden border-2 border-white dark:border-gray-800 shadow-2xl"
+            whileHover={{ scale: 1.01 }}
+            className="relative h-96 rounded-2xl overflow-hidden shadow-2xl border-2 border-white dark:border-gray-800"
           >
-            <img
-              src="/office-map.jpg"
-              alt="Mapa"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 flex items-end p-6">
-              <div className="text-white">
-                <p className="text-xl font-medium">Torre Empresarial T3</p>
-                <p className="text-sm">Plaza Central, Nivel 12</p>
-              </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8882445535416!2d-99.16891198453357!3d19.42702074608173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff2e8f1c45e3%3A0x5d1a2dd9091d94c5!2sPalacio%20de%20Bellas%20Artes!5e0!3m2!1sen!2smx!4v1717373723059!5m2!1sen!2smx"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              className="border-0"
+              allowFullScreen
+            ></iframe>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 pointer-events-none"></div>
           </motion.div>
         </div>
       </section>
@@ -249,10 +267,13 @@ const ContactoPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <div className="inline-block bg-primary-100 dark:bg-primary-900/20 p-4 rounded-2xl mb-2">
-            </div>
+            <img
+              src="/faq-illustration.svg"
+              alt="Preguntas frecuentes"
+              className="mx-auto mb-8 h-40"
+            />
             <h2 className="text-3xl font-bold mb-4">Preguntas Frecuentes</h2>
-            <p className="text-white dark:text-gray-400 max-w-xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
               Respuestas rápidas a tus consultas más comunes
             </p>
           </motion.div>
@@ -291,40 +312,40 @@ const contactInfo = [
   {
     icon: <MapPin className="text-primary-600 dark:text-primary-400" size={24} />,
     title: 'Oficina Principal',
-    content: 'Av. Innovación 456, Torre T3\nPlaza Central, Nivel 12'
+    content: 'Av. Innovación 456, Torre T3\nPlaza Central, Nivel 12\nCiudad de México, CDMX 03810'
   },
   {
     icon: <Mail className="text-primary-600 dark:text-primary-400" size={24} />,
     title: 'Correo Electrónico',
-    content: 'contacto@talenthree.com'
+    content: 'contacto@talenthree.com\nsoporte@talenthree.com'
   },
   {
     icon: <Phone className="text-primary-600 dark:text-primary-400" size={24} />,
     title: 'Teléfono',
-    content: '+52 55 1234 5678'
+    content: '+52 55 1234 5678\nHorario: L-V 9:00 - 18:00'
   }
 ];
 
 const faqItems = [
   {
-    icon: <BookOpen className="text-white dark:text-primary-400" size={20} />,
+    icon: <BookOpen className="text-primary-600 dark:text-primary-400" size={20} />,
     question: '¿Cómo accedo a mis cursos?',
-    answer: 'Todos los cursos están disponibles inmediatamente después de la compra en tu área personal.'
+    answer: 'Todos los cursos están disponibles inmediatamente después de la compra en tu área personal. Recibirás un correo con las instrucciones de acceso.'
   },
   {
-    icon: <Briefcase className="text-white dark:text-primary-400" size={20} />,
+    icon: <Briefcase className="text-primary-600 dark:text-primary-400" size={20} />,
     question: '¿Ofrecen certificados?',
-    answer: 'Sí, todos los cursos incluyen certificado digital válido internacionalmente.'
+    answer: 'Sí, todos nuestros cursos incluyen certificado digital válido internacionalmente que puedes descargar al completar el 100% del curso.'
   },
   {
-    icon: <Users className="text-white dark:text-primary-400" size={20} />,
+    icon: <Users className="text-primary-600 dark:text-primary-400" size={20} />,
     question: '¿Tienen programas empresariales?',
-    answer: 'Ofrecemos planes corporativos con descuentos especiales para equipos de +5 personas.'
+    answer: 'Ofrecemos planes corporativos con descuentos especiales para equipos de +5 personas. Contáctanos para una cotización personalizada.'
   },
   {
-    icon: <Globe className="text-white dark:text-primary-400" size={20} />,
+    icon: <Globe className="text-primary-600 dark:text-primary-400" size={20} />,
     question: '¿Disponible en otros países?',
-    answer: 'Nuestra plataforma está disponible globalmente con soporte en múltiples idiomas.'
+    answer: 'Nuestra plataforma está disponible globalmente con soporte en múltiples idiomas. Todos los precios se muestran en dólares americanos (USD).'
   }
 ];
 

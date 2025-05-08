@@ -15,6 +15,9 @@ import ContactoPage from './pages/ContactoPage';
 import CarritoPage from './pages/CarritoPage';
 import LoginPage from './pages/auth/LoginPage';
 import RegisterPage from './pages/auth/RegisterPage';
+import Faqs from './pages/Faqs';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 // Scroll to top when navigating
 const ScrollToTop: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -47,6 +50,9 @@ function App() {
                 <Route path="/instructores" element={<Layout><InstructoresPage /></Layout>} />
                 <Route path="/contacto" element={<Layout><ContactoPage /></Layout>} />
                 <Route path="/carrito" element={<Layout><CarritoPage /></Layout>} />
+                <Route path="/faqs" element={<Layout><Faqs /></Layout>} />
+                <Route path="/privacidad" element={<Layout><PrivacyPolicy /></Layout>} />
+                <Route path="/terminos" element={<Layout><TermsOfService /></Layout>} />
                 
                 {/* 404 page */}
                 <Route path="*" element={<Layout><div className="container mx-auto py-20 text-center"><h1 className="text-3xl font-bold">Página no encontrada</h1></div></Layout>} />

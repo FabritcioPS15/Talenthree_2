@@ -174,9 +174,6 @@ Talenthree.            </motion.p>
                 { to: "/faqs", label: "Preguntas Frecuentes" },
                 { to: "/privacidad", label: "Política de Privacidad" },
                 { to: "/terminos", label: "Términos de Servicio" },
-                { to: "/ayuda", label: "Soporte Técnico" },
-                { to: "/blog", label: "Blog Corporativo" },
-                { to: "/carreras", label: "Trabaja con Nosotros" },
               ].map(({ to, label }, index) => (
                 <motion.li 
                   key={label}
@@ -249,8 +246,8 @@ Talenthree.            </motion.p>
                   <Phone size={18} className="text-white" />
                 </motion.div>
                 <div>
-                  <a href="tel:+123456789" className="font-medium text-primary-100 hover:text-purple-300 transition-colors">
-                  (+51) 919746504
+                  <a href="tel:+51 960810996" className="font-medium text-primary-100 hover:text-purple-300 transition-colors">
+                  (+51) 960810996
                   </a>
                   <p className="text-primary-100 text-sm mt-1">Lunes a sábado de 8am a 6pm</p>
                 </div>
@@ -268,7 +265,7 @@ Talenthree.            </motion.p>
                 </motion.div>
                 <div>
                   <a href="mailto:info@talenthree.com" className="font-medium text-primary-100 hover:text-purple-300 transition-colors">
-                  contacto@talenthree.com
+                  informes@talenthree.com
                   </a>
                   <p className="text-primary-100 text-sm mt-1">Respuesta en 24 horas</p>
                 </div>
@@ -291,30 +288,7 @@ Talenthree.            </motion.p>
             >
               &copy; {currentYear} Talenthree International. Todos los derechos reservados.
             </motion.p>
-            <div className="flex space-x-4">
-              {[
-                { to: "/privacidad", label: "Privacidad" },
-                { to: "/terminos", label: "Términos" },
-                { to: "/cookies", label: "Cookies" },
-                { to: "/sitemap", label: "Mapa del Sitio" },
-              ].map(({ to, label }) => (
-                <NavLink
-                  key={label}
-                  to={to}
-                  className={({ isActive }) =>
-                    `text-sm transition-colors ${
-                      isActive ? "text-primary-100 font-medium" : "text-primary-100 hover:text-purple-600"
-                    }`
-                  }
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    {label}
-                  </motion.div>
-                </NavLink>
-              ))}
-            </div>
+            
           </div>
           
           <motion.div 
