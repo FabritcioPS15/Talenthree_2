@@ -58,7 +58,7 @@ const CarritoPage: React.FC = () => {
                         <div className="flex-grow">
                           <h3 className="font-medium text-gray-900 dark:text-white text-lg">{item.name}</h3>
                           <p className="text-primary-600 dark:text-primary-400 font-semibold mt-1">
-                            ${item.price.toFixed(2)}
+                            S/ {item.price.toFixed(2)}
                           </p>
                         </div>
                         
@@ -129,17 +129,17 @@ const CarritoPage: React.FC = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span className="text-gray-600 dark:text-gray-400">Subtotal</span>
-                      <span className="font-medium">${totalPrice.toFixed(2)}</span>
+                      <span className="font-medium">S/ {totalPrice.toFixed(2)}</span>
                     </div>
                     
                     <div className="flex justify-between">
                       <span className="text-gray-600 dark:text-gray-400">Descuento</span>
-                      <span className="font-medium">$0.00</span>
+                      <span className="font-medium">S/ 0.00</span>
                     </div>
                     
                     <div className="border-t border-gray-200 dark:border-gray-800 pt-4 flex justify-between">
                       <span className="font-semibold">Total</span>
-                      <span className="font-bold text-lg">${totalPrice.toFixed(2)}</span>
+                      <span className="font-bold text-lg">S/ {totalPrice.toFixed(2)}</span>
                     </div>
                   </div>
                   
@@ -187,7 +187,7 @@ const CarritoPage: React.FC = () => {
                 <div className="h-40 bg-gray-200 dark:bg-gray-800"></div>
                 <div className="p-4">
                   <h3 className="font-medium">Curso recomendado 1</h3>
-                  <p className="text-primary-600 dark:text-primary-400 font-semibold mt-1">$49.99</p>
+                  <p className="text-primary-600 dark:text-primary-400 font-semibold mt-1">S/ 199.99</p>
                   <button className="mt-2 w-full btn btn-outline py-1">Añadir al carrito</button>
                 </div>
               </div>
@@ -195,7 +195,7 @@ const CarritoPage: React.FC = () => {
                 <div className="h-40 bg-gray-200 dark:bg-gray-800"></div>
                 <div className="p-4">
                   <h3 className="font-medium">Curso recomendado 2</h3>
-                  <p className="text-primary-600 dark:text-primary-400 font-semibold mt-1">$59.99</p>
+                  <p className="text-primary-600 dark:text-primary-400 font-semibold mt-1">S/ 249.99</p>
                   <button className="mt-2 w-full btn btn-outline py-1">Añadir al carrito</button>
                 </div>
               </div>
@@ -203,7 +203,7 @@ const CarritoPage: React.FC = () => {
                 <div className="h-40 bg-gray-200 dark:bg-gray-800"></div>
                 <div className="p-4">
                   <h3 className="font-medium">Curso recomendado 3</h3>
-                  <p className="text-primary-600 dark:text-primary-400 font-semibold mt-1">$39.99</p>
+                  <p className="text-primary-600 dark:text-primary-400 font-semibold mt-1">S/ 179.99</p>
                   <button className="mt-2 w-full btn btn-outline py-1">Añadir al carrito</button>
                 </div>
               </div>

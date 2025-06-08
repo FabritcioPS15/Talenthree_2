@@ -112,7 +112,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             </Link>
           </div>
           <div className="text-primary-700 dark:text-primary-400 font-bold">
-            S/.{course.price.toFixed(2)}
+            S/ {course.price.toFixed(2)}
           </div>
         </div>
         
@@ -121,7 +121,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           className="mt-4 w-full flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white py-3 px-4 rounded-md transition-colors"
         >
           <ShoppingCart size={18} className="mr-2" />
-          Beneficios
+          Agregar al carrito
         </button>
       </div>
     </div>
