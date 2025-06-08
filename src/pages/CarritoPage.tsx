@@ -153,7 +153,7 @@ const CarritoPage: React.FC = () => {
                   <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-md flex items-start">
                     <AlertCircle size={18} className="text-blue-600 dark:text-blue-400 mt-0.5 mr-3 flex-shrink-0" />
                     <p className="text-sm text-blue-800 dark:text-blue-300">
-                      Al realizar tu compra, aceptas nuestros <a href="/terminos" className="underline hover:text-blue-700 dark:hover:text-blue-200">Términos y Condiciones</a> y <a href="/privacidad" className="underline hover:text-blue-700 dark:hover:text-blue-200">Política de Privacidad</a>.
+                      Al realizar tu compra, aceptas nuestros <a href="/terminos" className="underline hover:text-blue-700 dark:hover:text-blue-200">Términos y Condiciones</a> y <a href="/privacidad" className=\"underline hover:text-blue-700 dark:hover:text-blue-200">Política de Privacidad</a>.
                     </p>
                   </div>
                 </div>
