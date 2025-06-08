@@ -527,7 +527,7 @@ const contactInfo = [
     }
   },
   {
-    icon: <Mail className="text-white" size={24} />,
+    icon: <Mail className="text-white\" size={24} />,
     title: 'Correo Electrónico',
     content: 'informes@talenthree.com\nsoporte@talenthree.com',
     action: {
@@ -548,7 +548,7 @@ const contactInfo = [
 
 const faqItems = [
   {
-    icon: <BookOpen className="text-primary-600 dark:text-primary-400" size={24} />,
+    icon: <BookOpen className="text-primary-600 dark:text-primary-400\" size={24} />,
     question: '¿Cómo accedo a mis cursos?',
     answer: 'Todos los cursos están disponibles inmediatamente después de la inscripción en tu área personal. Recibirás un correo con las instrucciones de acceso y podrás comenzar de inmediato.'
   },
@@ -558,7 +558,7 @@ const faqItems = [
     answer: 'Sí, todos nuestros cursos incluyen certificado digital válido internacionalmente que puedes descargar al completar el 100% del programa y aprobar las evaluaciones.'
   },
   {
-    icon: <Users className="text-primary-600 dark:text-primary-400" size={24} />,
+    icon: <Users className="text-primary-600 dark:text-primary-400\" size={24} />,
     question: '¿Tienen programas empresariales?',
     answer: 'Ofrecemos planes corporativos con descuentos especiales para equipos de 5+ personas, capacitación in-house y soluciones personalizadas. Contáctanos para una cotización.'
   },
